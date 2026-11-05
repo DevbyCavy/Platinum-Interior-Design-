@@ -1,8 +1,12 @@
+/* Bodoni Moda — logo wordmark only */
 @import '@fontsource/bodoni-moda/400.css';
-@import '@fontsource/bodoni-moda/400-italic.css';
-@import '@fontsource/manrope/300.css';
-@import '@fontsource/manrope/400.css';
-@import '@fontsource/manrope/500.css';
+/* Poppins — everything else */
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/300-italic.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
 
 @tailwind base;
 @tailwind components;
@@ -11,14 +15,16 @@
 @layer base {
   /* Font roles — swap the families here (see tailwind.config.js fontFamily). */
   :root {
-    --font-display: 'Bodoni Moda';
-    --font-sans: 'Manrope';
+    --font-logo: 'Bodoni Moda';
+    --font-display: 'Poppins';
+    --font-sans: 'Poppins';
   }
   html { scroll-behavior: smooth; }
   /* Safety net: never allow sideways scrolling on small screens */
   html, body { overflow-x: clip; }
-  body { @apply font-sans font-light text-espresso bg-white; line-height: 1.75; }
-  h1, h2, h3 { @apply font-display font-light uppercase tracking-luxe; line-height: 1.15; }
+  body { @apply font-sans font-light text-espresso bg-white antialiased; line-height: 1.75; }
+  /* Modern headings: sentence/title case, heavy weight, tight tracking */
+  h1, h2, h3 { @apply font-display font-semibold tracking-tight; line-height: 1.08; }
   :focus-visible { outline: 2px solid #A07840; outline-offset: 3px; }
   ::selection { background: #F4EBDC; }
 }
@@ -26,11 +32,26 @@
 @layer components {
   .container-content { @apply mx-auto w-full max-w-content px-6 md:px-10; }
   .section { @apply py-[4.5rem] md:py-32; }
-  .h1 { font-size: clamp(2.25rem, 5vw, 4.5rem); }
-  .h2 { font-size: clamp(1.75rem, 3.5vw, 3rem); }
-  .eyebrow { @apply font-sans font-medium uppercase tracking-wide3 text-gold-deep; font-size: 0.8125rem; }
-  .caption { @apply font-sans font-normal uppercase text-taupe; font-size: 0.75rem; letter-spacing: 0.2em; }
-  .label { @apply font-sans font-medium uppercase tracking-label; font-size: 0.75rem; }
+  .h1 { font-size: clamp(2.5rem, 6vw, 5.25rem); letter-spacing: -0.035em; line-height: 1; }
+  .h2 { font-size: clamp(1.875rem, 3.6vw, 3.25rem); letter-spacing: -0.03em; }
+  /* Light-weight accent words inside headings, e.g. <h2>Our <em className="accent">process</em></h2> */
+  .accent { @apply font-light not-italic text-gold-deep; }
+  /* Eyebrow = small pill tag with a gold dot */
+  .eyebrow {
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-hairline bg-white px-3.5 py-1.5 font-sans font-medium text-gold-deep;
+    font-size: 0.75rem; letter-spacing: 0.04em; line-height: 1;
+  }
+  .eyebrow::before { content: ''; @apply h-1.5 w-1.5 rounded-full bg-gold; }
+  /* Eyebrow on dark sections */
+  .eyebrow-dark {
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-sans font-medium text-gold-light;
+    font-size: 0.75rem; letter-spacing: 0.04em; line-height: 1;
+  }
+  .eyebrow-dark::before { content: ''; @apply h-1.5 w-1.5 rounded-full bg-gold; }
+  /* Dark-theme section spacing */
+  .section-dark { @apply bg-ink py-20 text-white/65 md:py-28; }
+  .caption { @apply font-sans font-normal text-taupe; font-size: 0.8125rem; letter-spacing: 0.01em; }
+  .label { @apply font-sans font-medium; font-size: 0.8125rem; letter-spacing: 0.01em; }
 
   /* Slow diagonal light sweep for gold buttons/bands */
   .sheen { position: relative; overflow: hidden; isolation: isolate; }
@@ -42,7 +63,31 @@
   .sheen:hover::after { transform: translateX(120%); }
 }
 
+/*
+ * Scroll-reveal (driven by src/lib/useReveal.js). Kept outside @layer so it wins over
+ * utility transitions while animating; the classes are removed once the element is in.
+ * Stagger with style={{ '--d': n }}.
+ */
+.reveal, .reveal-left, .reveal-right, .reveal-scale {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.reveal { transform: translateY(28px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-scale { transform: scale(0.94); }
+.is-visible { opacity: 1; transform: none; }
+
+/* Page-load entrance for hero copy: add .enter and an optional style={{ '--d': n }} */
+.enter { animation: enter-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc(var(--d, 0) * 120ms + 100ms); }
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(26px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; }
 }

@@ -17,7 +17,7 @@ export default function Logo({ tone = 'gold', className = '' }) {
       className={`inline-flex flex-col items-center leading-none ${className}`}
     >
       <span
-        className={`font-display text-[1.25rem] font-normal uppercase tracking-[0.16em] sm:text-[1.6rem] sm:tracking-[0.22em] md:text-[1.85rem] ${word}`}
+        className={`font-logo text-[1.25rem] font-normal uppercase tracking-[0.16em] sm:text-[1.6rem] sm:tracking-[0.22em] md:text-[1.85rem] ${word}`}
       >
         Platinum
       </span>

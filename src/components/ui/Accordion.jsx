@@ -6,13 +6,18 @@ export default function Accordion({ items }) {
   const baseId = useId();
 
   return (
-    <ul className="border-t border-gold/40">
+    <ul className="space-y-3">
       {items.map(({ q, a }, i) => {
         const isOpen = open === i;
         const btnId = `${baseId}-btn-${i}`;
         const panelId = `${baseId}-panel-${i}`;
         return (
-          <li key={q} className="border-b border-gold/40">
+          <li
+            key={q}
+            className={`rounded-2xl border bg-champagne px-5 transition-colors duration-300 md:px-7 ${
+              isOpen ? 'border-gold/40' : 'border-transparent hover:border-hairline'
+            }`}
+          >
             <h3 className="font-sans normal-case tracking-normal">
               <button
                 id={btnId}
@@ -22,7 +27,7 @@ export default function Accordion({ items }) {
                 onClick={() => setOpen(isOpen ? -1 : i)}
                 className="group flex w-full items-center justify-between gap-6 py-6 text-left"
               >
-                <span className="text-base font-normal text-espresso transition-colors group-hover:text-gold-deep md:text-lg">
+                <span className="text-base font-medium text-espresso transition-colors group-hover:text-gold-deep">
                   {q}
                 </span>
                 {/* Gold +/− */}
@@ -45,7 +50,7 @@ export default function Accordion({ items }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="max-w-2xl pb-7 pr-10 text-[0.9375rem] text-espresso/85">{a}</p>
+                <p className="max-w-2xl pb-6 pr-6 text-[0.9375rem] text-espresso/85">{a}</p>
               </div>
             </div>
           </li>

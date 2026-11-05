@@ -1,55 +1,100 @@
 [
   {
-    "slug": "interior-design",
-    "title": "Interior Design",
-    "image": "living-white-panelled",
-    "summary": "Complete interiors designed around the way you live, from the first sketch to the final styled reveal. We bring colour, light, texture and furniture together into one considered, timeless whole.",
+    "slug": "wainscoting-tv-wall-units",
+    "title": "Wainscoting & TV Wall Units",
+    "icon": "Tv",
+    "image": "living-tv-wall-led",
+    "summary": "Statement walls that turn a room into a showpiece. From classic wainscoting and panel mouldings to bespoke TV wall units with floating consoles and soft LED lighting.",
     "included": [
-      "In-depth design consultation",
-      "Concept and mood boards",
-      "Colour, materials and finishes palette",
-      "Lighting design",
-      "Furniture layout and selection",
-      "Final styling and reveal"
+      "Wainscoting and wall panel mouldings",
+      "Feature and accent walls",
+      "Bespoke TV wall units",
+      "Floating TV consoles and cabinets",
+      "LED and backlighting"
     ]
   },
   {
-    "slug": "space-planning",
-    "title": "Space Planning",
+    "slug": "fitted-kitchens-bedroom-cabinets",
+    "title": "Fitted Kitchens & Bedroom Cabinets",
+    "icon": "CookingPot",
     "image": "kitchen-white-galley",
-    "summary": "Beautiful rooms start with a layout that works. We plan how every space flows and functions, so it feels open, practical and effortless to live in, whatever its size.",
+    "summary": "Kitchens and built-in cabinets made to fit your space and the way you use it, with smart storage, quality finishes and a clean, modern look.",
     "included": [
-      "Site visit and measurements",
-      "Layout and traffic-flow planning",
-      "Furniture placement plans",
-      "Storage and built-in solutions",
-      "Kitchen and joinery layouts"
+      "Fitted kitchen units",
+      "Countertops and splashbacks",
+      "Built-in wardrobes",
+      "Bedroom cabinets and storage",
+      "Pantry and appliance units"
     ]
   },
   {
-    "slug": "furniture-decor-sourcing",
-    "title": "Furniture & Décor Sourcing",
+    "slug": "headboards-base-beds",
+    "title": "Headboards & Base Beds",
+    "icon": "BedDouble",
+    "image": null,
+    "summary": "Custom headboards and base beds that make the bed the centrepiece of the room, in the size, shape, fabric and finish you choose.",
+    "included": [
+      "Custom upholstered headboards",
+      "Panelled and wall-mounted headboards",
+      "Base beds in all sizes",
+      "Storage base beds",
+      "Fabric and finish selection"
+    ]
+  },
+  {
+    "slug": "dining-bedroom-suites",
+    "title": "Dining & Bedroom Suites",
+    "icon": "UtensilsCrossed",
+    "image": null,
+    "summary": "Complete, coordinated dining and bedroom suites, chosen and finished to suit your home, so every piece works together beautifully.",
+    "included": [
+      "Dining tables and chairs",
+      "Sideboards and display units",
+      "Bedroom suites",
+      "Bedside tables and dressers",
+      "Coordinated finishes"
+    ]
+  },
+  {
+    "slug": "home-cinemas-movie-rooms",
+    "title": "Home Cinemas & Movie Rooms",
+    "icon": "Clapperboard",
     "image": "living-tv-unit-shelving",
-    "summary": "The right pieces make a room. We source furniture, lighting, art and accessories from trusted suppliers and craftspeople, then manage ordering and delivery for you.",
+    "summary": "Dedicated movie rooms and cinema-style lounges designed for comfort and atmosphere, with feature walls, mood lighting and seating built for movie nights.",
     "included": [
-      "Curated furniture and lighting selections",
-      "Art, accessories and soft furnishings",
-      "Custom and made-to-measure pieces",
-      "Supplier coordination and ordering",
-      "Delivery and placement"
+      "Cinema room design",
+      "Media and TV feature walls",
+      "Mood and ambient lighting",
+      "Comfortable cinema seating",
+      "Acoustic and decorative wall finishes"
     ]
   },
   {
-    "slug": "renovation-styling",
-    "title": "Renovation & Styling",
-    "image": "kitchen-mirrored-wall-unit",
-    "summary": "From statement feature walls and custom joinery to full room makeovers, we manage the transformation and style the finished space so it is ready to enjoy.",
+    "slug": "mirrors-skirting-painting",
+    "title": "Mirrors, Skirting & Painting",
+    "icon": "PaintRoller",
+    "image": "hallway-gallery",
+    "summary": "The finishing touches that make a home feel complete: statement mirrors, neat skirting and flawless paintwork.",
     "included": [
-      "Feature walls, panelling and ceilings",
-      "Custom cabinetry and media units",
-      "Coordination of trades and installation",
-      "Project management from start to finish",
-      "Final styling and handover"
+      "Decorative and wall mirrors",
+      "Mirrored feature walls",
+      "Skirting boards",
+      "Interior painting",
+      "Finishing and touch-ups"
+    ]
+  },
+  {
+    "slug": "ceiling-designs",
+    "title": "Ceiling Designs & Much More",
+    "icon": "LampCeiling",
+    "image": "living-white-panelled",
+    "summary": "Elegant ceilings that lift the whole room, from cove lighting and bulkheads to decorative cornices. And if you have something else in mind, just ask.",
+    "included": [
+      "Bulkheads and drop ceilings",
+      "Cove and LED ceiling lighting",
+      "Cornices and ceiling mouldings",
+      "Chandelier and light fittings",
+      "Custom requests"
     ]
   }
 ]

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import BookNowButton from '../ui/BookNowButton';
 import ResponsiveImage from '../ui/ResponsiveImage';
 import site from '../../content/site.json';
@@ -6,59 +7,58 @@ import work from '../../content/work.json';
 
 const photo = work.find((w) => w.image === 'living-white-panelled');
 
-/** The one bold gold moment on a page — booking call-to-action band (architecture §6.10). */
+/**
+ * Booking call-to-action — full-bleed section: the photo fills the background,
+ * a dark gradient runs in from the left, and the copy sits on the left.
+ */
 export default function CtaBand() {
   return (
-    <section className="sheen relative overflow-hidden bg-gold-gradient">
-      {/*
-        Photo on the left that dissolves into the gold towards the centre.
-        The mask fades it fully out before the centred content begins (desktop only).
-      */}
+    <section className="relative overflow-hidden bg-ink">
       {photo && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 hidden w-[30%] lg:block"
-          style={{
-            WebkitMaskImage: 'linear-gradient(to right, #000 0%, #000 35%, rgba(0,0,0,0.55) 65%, transparent 100%)',
-            maskImage: 'linear-gradient(to right, #000 0%, #000 35%, rgba(0,0,0,0.55) 65%, transparent 100%)',
-          }}
-        >
-          <ResponsiveImage
-            name={photo.image}
-            alt=""
-            sizes="30vw"
-            className="block h-full w-full"
-            imgClassName="h-full w-full object-cover"
-            style={{ objectPosition: '0% 40%' }}
-          />
-          {/* Warm gold wash so the photo melts into the band */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gold-light/25 via-gold/40 to-gold/70 mix-blend-multiply" />
-        </div>
+        <ResponsiveImage
+          name={photo.image}
+          alt=""
+          sizes="100vw"
+          className="absolute inset-0 block"
+          imgClassName="h-full w-full object-cover object-[70%_40%]"
+        />
       )}
-
-      {/* Faint monogram watermark — TODO(open): swap for the logo mark SVG */}
+      {/* Gradient: solid ink on the left fading to the photo on the right */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/40 md:via-ink/85 md:via-40% md:to-transparent"
+      />
+      {/* Soft gold glow behind the copy */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-6 top-1/2 -translate-y-1/2 select-none font-display text-[22rem] leading-none text-white/10 md:right-16"
-      >
-        P
-      </span>
+        className="pointer-events-none absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-gold/15 blur-3xl"
+      />
 
-      <div className="container-content relative flex flex-col items-center py-24 text-center md:py-28">
-        {/* Narrower on large screens so the content stays clear of the photo */}
-        <div className="flex flex-col items-center lg:max-w-xl">
-          <h2 className="h2 text-espresso">Let’s Create Your Space</h2>
+      <div className="container-content relative py-24 md:py-32">
+        <div className="reveal-left max-w-xl">
+          <p className="eyebrow-dark">Let’s talk</p>
+          <h2 className="mt-6 text-[clamp(2rem,4.2vw,3.75rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white">
+            We can create the space <span className="font-light text-gold-light">of your dreams.</span>
+          </h2>
           {/* TODO(open): confirm the response time promised in site.json → whatsappReplyNote */}
-          <p className="mt-6 max-w-prose text-espresso">
+          <p className="mt-6 max-w-md text-[0.9375rem] leading-relaxed text-white/70">
             Tap below to chat with us on WhatsApp. {site.whatsappReplyNote}
           </p>
-          <BookNowButton variant="white" size="lg" placement="cta-band" className="mt-10" />
-          <Link
-            to="/contact#enquiry"
-            className="label mt-6 text-espresso underline decoration-espresso/30 underline-offset-8 hover:decoration-espresso"
-          >
-            Prefer email? Send an enquiry →
-          </Link>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <BookNowButton size="lg" placement="cta-band" />
+            <Link
+              to="/contact#enquiry"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white"
+            >
+              Prefer email? Send an enquiry
+              <ArrowUpRight
+                aria-hidden
+                size={16}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:rotate-45"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

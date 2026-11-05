@@ -20,11 +20,11 @@ function ContactRow({ Icon, label, value, note, href, external, featured, onClic
         onClick={onClick}
         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         className={`group relative flex items-center gap-5 py-6 transition-colors duration-300 ${
-          featured ? 'border-l-2 border-gold bg-champagne pl-5 pr-4 hover:bg-sand' : 'pr-1 hover:bg-champagne/60'
+          featured ? 'mb-3 rounded-2xl bg-champagne px-5 hover:bg-sand' : 'rounded-2xl px-3 hover:bg-champagne/60'
         }`}
       >
         <span
-          className={`flex h-12 w-12 shrink-0 items-center justify-center transition-transform duration-500 group-hover:-translate-y-0.5 ${
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-transform duration-500 group-hover:-translate-y-0.5 ${
             featured ? 'bg-gold-gradient text-espresso' : 'border border-gold/60 text-gold'
           }`}
         >
@@ -34,14 +34,14 @@ function ContactRow({ Icon, label, value, note, href, external, featured, onClic
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="caption">{label}</span>
             {note && (
-              <span className="border border-gold/60 px-2 py-0.5 text-[0.625rem] font-medium uppercase tracking-[0.2em] text-gold-deep">
+              <span className="rounded-full border border-gold/60 px-2.5 py-0.5 text-[0.6875rem] font-medium text-gold-deep">
                 {note}
               </span>
             )}
           </span>
           <span
             className={`mt-1 block text-espresso transition-colors [overflow-wrap:anywhere] group-hover:text-gold-deep ${
-              featured ? 'font-display text-2xl' : 'text-base md:text-lg'
+              featured ? 'font-display text-2xl font-semibold tracking-tight' : 'text-base md:text-lg'
             }`}
           >
             {value}
@@ -72,22 +72,26 @@ export default function Contact() {
         title="Contact"
         description="Book Platinum Interior Design on WhatsApp, or send us an email enquiry. Interior designers in Harare, Zimbabwe."
       />
-      <PageHero title="Contact" eyebrow="Get In Touch" />
+      <PageHero
+        title="Contact"
+        eyebrow="Get In Touch"
+        image="living-white-panelled"
+        intro="Tell us about your space. The quickest way to reach us is WhatsApp."
+      />
 
       {/* ── Ways to reach us + enquiry form ─────────────────── */}
       <section className="section">
         <div className="container-content grid gap-16 lg:grid-cols-12 lg:gap-16">
           {/* Left: contact methods */}
-          <div className="min-w-0 lg:col-span-5">
+          <div className="reveal-left min-w-0 lg:col-span-5">
             <Eyebrow>Let’s Talk</Eyebrow>
-            <h2 className="h2 mt-4">Let’s Talk About Your Space</h2>
-            <span aria-hidden className="mt-6 block h-px w-16 bg-gold" />
+            <h2 className="h2 mt-5">Let’s Talk About Your Space</h2>
             <p className="mt-6 max-w-md text-[0.9375rem] text-espresso/85">
               Whether it’s a single statement wall or a whole home, we’d love to hear about it. Choose whichever way
               suits you best.
             </p>
 
-            <ul className="mt-10 divide-y divide-hairline border-y border-hairline">
+            <ul className="mt-10 divide-y divide-hairline">
               <ContactRow
                 featured
                 Icon={FaWhatsapp}
@@ -111,10 +115,9 @@ export default function Contact() {
           </div>
 
           {/* Right: enquiry form card */}
-          <div id="enquiry" className="min-w-0 scroll-mt-28 lg:col-span-7">
+          <div id="enquiry" className="reveal-right min-w-0 scroll-mt-28 lg:col-span-7">
             <div className="relative">
-              <span aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 border border-gold" />
-              <div className="relative bg-white px-6 py-10 shadow-soft ring-1 ring-hairline sm:px-10 md:px-12 md:py-14">
+              <div className="relative rounded-3xl border border-hairline bg-white px-6 py-10 shadow-[0_20px_50px_-20px_rgba(43,37,32,0.25)] sm:px-10 md:px-12 md:py-14">
                 <Eyebrow>Prefer email?</Eyebrow>
                 <h2 className="mt-4 text-[clamp(1.5rem,2.6vw,2.25rem)]">Send an Enquiry</h2>
                 <p className="mt-4 max-w-prose text-[0.9375rem] text-espresso/85">
@@ -132,10 +135,9 @@ export default function Contact() {
       {/* ── Visit the studio ───────────────────────────────── */}
       <section className="section bg-champagne">
         <div className="container-content grid items-center gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-5">
+          <div className="reveal-left md:col-span-5">
             <Eyebrow>Visit the Studio</Eyebrow>
-            <h2 className="h2 mt-4">Find Us</h2>
-            <span aria-hidden className="mt-6 block h-px w-16 bg-gold" />
+            <h2 className="h2 mt-5">Find Us</h2>
             {/* TODO(open): confirm address and opening hours */}
             <dl className="mt-8 space-y-6">
               <div>
@@ -150,22 +152,22 @@ export default function Contact() {
           </div>
 
           {/* Map — loads only after the visitor asks for it */}
-          <div className="md:col-span-7">
+          <div className="reveal-right md:col-span-7">
             {showMap ? (
               <iframe
                 title="Map showing the Platinum Interior Design studio"
                 src={mapSrc}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="aspect-[16/10] w-full border border-gold/50"
+                className="aspect-[16/10] w-full rounded-3xl border border-hairline shadow-soft"
               />
             ) : (
               <button
                 type="button"
                 onClick={() => setMapRequested(true)}
-                className="group relative flex aspect-[16/10] w-full flex-col items-center justify-center gap-4 border border-gold/50 bg-white transition-colors hover:bg-sand"
+                className="group relative flex aspect-[16/10] w-full flex-col items-center justify-center gap-4 rounded-3xl border border-hairline bg-white shadow-soft transition-colors hover:bg-sand"
               >
-                <span aria-hidden className="absolute inset-3 border border-hairline" />
+                <span aria-hidden className="absolute inset-3 rounded-2xl border border-hairline" />
                 <MapPin aria-hidden size={32} strokeWidth={1.25} className="text-gold transition-transform duration-500 group-hover:-translate-y-1" />
                 <span className="label text-gold-deep">Show map</span>
                 <span className="max-w-[16rem] text-xs text-taupe">Loads Google Maps, which may set cookies.</span>

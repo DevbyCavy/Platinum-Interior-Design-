@@ -30,8 +30,12 @@ export default function ProjectGrid({ placement = 'project-grid' }) {
   return (
     <ul className="grid auto-rows-[220px] grid-cols-1 gap-4 md:auto-rows-[200px] md:grid-cols-12 md:gap-6">
       {items.map((item, i) => (
-        <li key={item.image} className={`row-span-2 ${LAYOUT[i] || 'md:col-span-4'}`}>
-          <figure className="group relative h-full overflow-hidden bg-champagne" tabIndex={0}>
+        <li
+          key={item.image}
+          className={`reveal row-span-2 ${LAYOUT[i] || 'md:col-span-4'}`}
+          style={{ '--d': i % 3 }}
+        >
+          <figure className="group relative h-full overflow-hidden rounded-[2rem] bg-champagne" tabIndex={0}>
             <ResponsiveImage
               name={item.image}
               alt={item.alt}
@@ -40,23 +44,30 @@ export default function ProjectGrid({ placement = 'project-grid' }) {
               imgClassName="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-focus:scale-[1.03]"
               style={{ objectPosition: item.focus }}
             />
-            {/* White gradient reveal on hover / focus */}
-            <figcaption className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-white via-white/90 to-transparent px-6 pb-6 pt-16 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100">
-              <p className="font-display text-2xl uppercase tracking-luxe text-espresso">{item.title}</p>
-              <p className="caption mt-1">{item.category}</p>
-              <span aria-hidden className="mt-3 block h-px w-12 bg-gold" />
+            {/* Glass caption chip — always visible, lifts on hover / focus */}
+            <figcaption className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl border border-white/40 bg-white/75 px-4 py-3 backdrop-blur-md transition-transform duration-500 group-hover:-translate-y-1 group-focus:-translate-y-1 sm:right-auto sm:min-w-[15rem]">
+              <span>
+                <span className="block font-semibold tracking-tight text-espresso">{item.title}</span>
+                <span className="block text-xs text-taupe">{item.category}</span>
+              </span>
+              <span aria-hidden className="h-2 w-2 shrink-0 rounded-full bg-gold" />
             </figcaption>
           </figure>
         </li>
       ))}
 
       {/* Booking tile completes the last row */}
-      <li className="row-span-2 md:col-span-4">
-        <div className="flex h-full flex-col items-center justify-center border border-gold bg-champagne px-8 text-center">
-          <p className="eyebrow">Your Space Next</p>
-          <p className="mt-4 font-display text-3xl font-light uppercase tracking-luxe">Love what you see?</p>
-          <span aria-hidden className="mt-5 block h-px w-12 bg-gold" />
-          <BookNowButton placement={placement} className="mt-8" />
+      <li className="reveal row-span-2 md:col-span-4" style={{ '--d': 2 }}>
+        <div className="flex h-full flex-col justify-between rounded-[2rem] bg-espresso p-8 text-white">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-3.5 py-1.5 text-xs font-medium text-gold-light">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" /> Your space next
+          </p>
+          <div>
+            <p className="text-3xl font-semibold leading-tight tracking-tight">
+              Love what <span className="font-light text-gold-light">you see?</span>
+            </p>
+            <BookNowButton placement={placement} className="mt-7" />
+          </div>
         </div>
       </li>
     </ul>

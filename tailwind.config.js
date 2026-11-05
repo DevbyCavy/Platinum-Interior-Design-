@@ -10,9 +10,12 @@ export default {
         espresso: '#2B2520',
         taupe: '#8A7F72',
         hairline: '#E9E0D2',
+        // Dark theme surfaces (home page)
+        ink: { DEFAULT: '#161618', soft: '#1D1D20', card: '#242428', line: '#2F2F34' },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        logo: ['var(--font-logo)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       letterSpacing: { luxe: '0.12em', label: '0.25em', wide3: '0.3em' },
@@ -21,7 +24,10 @@ export default {
         'gold-gradient': 'linear-gradient(135deg,#E0B878 0%,#C2955A 50%,#A07840 100%)',
         'gold-gradient-deep': 'linear-gradient(135deg,#C2955A 0%,#A07840 60%,#8A6534 100%)',
       },
-      boxShadow: { soft: '0 10px 30px rgba(160,120,64,0.08)' },
+      boxShadow: {
+        soft: '0 10px 30px rgba(160,120,64,0.08)',
+        lift: '0 24px 60px -28px rgba(43,37,32,0.35)',
+      },
       keyframes: {
         // One pulse at the start of each 6s cycle.
         'gold-pulse': {
@@ -45,7 +51,7 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         settle: {
-          '0%': { transform: 'scale(1.04)' },
+          '0%': { transform: 'scale(1.08)' },
           '100%': { transform: 'scale(1)' },
         },
         scrollcue: {

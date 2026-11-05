@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import FloatingBookNow from './FloatingBookNow';
 import CookieBanner from './CookieBanner';
+import { useReveal } from '../../lib/useReveal';
 
 /** Scroll to top on route change, or to #hash targets (e.g. /contact#enquiry). */
 function ScrollManager() {
@@ -28,6 +29,7 @@ function ScrollManager() {
 }
 
 export default function Layout() {
+  useReveal();
   return (
     <>
       <a

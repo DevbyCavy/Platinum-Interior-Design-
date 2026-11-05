@@ -19,9 +19,7 @@ export default function FacebookVideo({ url, title, width = 300 }) {
 
   return (
     <div className="relative mx-auto w-full" style={{ maxWidth: width }}>
-      {/* Offset gold frame */}
-      <span aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 border border-gold" />
-      <div className="relative overflow-hidden bg-sand" style={{ aspectRatio: '9 / 16' }}>
+      <div className="relative overflow-hidden rounded-3xl bg-ink-card" style={{ aspectRatio: '9 / 16' }}>
         {show ? (
           <iframe
             src={src}
@@ -38,14 +36,14 @@ export default function FacebookVideo({ url, title, width = 300 }) {
             type="button"
             onClick={() => setRequested(true)}
             aria-label={`Load video: ${title}`}
-            className="group absolute inset-0 flex flex-col items-center justify-center gap-5 bg-gradient-to-b from-champagne to-sand px-8 text-center"
+            className="group absolute inset-0 flex flex-col items-center justify-center gap-5 bg-gradient-to-b from-ink-card to-ink-soft px-8 text-center"
           >
-            <span aria-hidden className="absolute inset-3 border border-gold/40" />
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold bg-white/70 text-gold transition-all duration-500 group-hover:scale-105 group-hover:bg-gold group-hover:text-white">
+            <span aria-hidden className="absolute inset-3 rounded-2xl border border-white/10" />
+            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold bg-white/5 text-gold transition-all duration-500 group-hover:scale-105 group-hover:bg-gold group-hover:text-white">
               <FaPlay aria-hidden className="ml-1 text-lg" />
             </span>
-            <span className="label text-gold-deep">Load video</span>
-            <span className="flex items-center gap-2 text-xs text-taupe">
+            <span className="label text-gold-light">Load video</span>
+            <span className="flex items-center gap-2 text-xs text-white/50">
               <FaFacebookF aria-hidden /> Plays from Facebook, which may set cookies.
             </span>
           </button>

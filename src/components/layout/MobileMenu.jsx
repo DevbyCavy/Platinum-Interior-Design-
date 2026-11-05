@@ -27,7 +27,7 @@ export default function MobileMenu({ open, onClose }) {
       aria-label="Menu"
       aria-hidden={!open}
       inert={open ? undefined : ''}
-      className={`fixed inset-0 z-40 flex flex-col bg-white pt-20 transition-opacity duration-500 lg:hidden ${
+      className={`fixed inset-0 z-40 flex flex-col bg-ink pt-20 transition-opacity duration-500 lg:hidden ${
         open ? 'opacity-100' : 'pointer-events-none opacity-0'
       }`}
     >
@@ -44,8 +44,8 @@ export default function MobileMenu({ open, onClose }) {
                 end={to === '/'}
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `font-display text-[clamp(1.75rem,8vw,2.25rem)] font-light uppercase tracking-luxe transition-colors ${
-                    isActive ? 'text-gold-deep' : 'text-espresso hover:text-gold-deep'
+                  `font-display text-[clamp(1.75rem,8vw,2.25rem)] font-semibold tracking-tight transition-colors ${
+                    isActive ? 'text-gold' : 'text-white hover:text-gold'
                   }`
                 }
               >
@@ -56,7 +56,7 @@ export default function MobileMenu({ open, onClose }) {
         </ul>
       </nav>
 
-      <div className="border-t border-hairline bg-champagne">
+      <div className="border-t border-white/10 bg-ink-soft">
         <div className="container-content flex flex-col items-center gap-6 py-8">
           <BookNowButton size="lg" placement="mobile-menu" className="w-full" />
           <SocialIcons size="text-lg" />

@@ -40,15 +40,9 @@ export default function FloatingBookNow() {
       }`}
     >
       {/* Pulse ring: once every 6s, 3 times, disabled under reduced motion (global CSS) */}
-      <div className={visible ? 'animate-gold-pulse' : ''}>
-        {/* Mobile: square icon */}
-        <BookNowButton
-          variant="icon"
-          placement="floating"
-          className="h-14 w-14 shadow-soft md:hidden [&_svg]:text-2xl"
-        />
-        {/* Desktop: icon + label tab */}
-        <BookNowButton size="md" placement="floating" className="hidden shadow-soft md:inline-flex" />
+      <div className={`rounded-full ${visible ? 'animate-gold-pulse' : ''}`}>
+        {/* Gold circle with the WhatsApp icon; widens to show "Book Us Now" on hover / focus */}
+        <BookNowButton variant="expand" placement="floating" />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export default function FloatingField({
 }) {
   const errorId = `${id}-error`;
   const filled = value !== '' && value != null;
-  const fieldCls = `peer block w-full border bg-white px-4 pb-2.5 pt-6 text-[0.9375rem] text-espresso outline-none transition-colors duration-300 focus:border-gold-deep ${
+  const fieldCls = `peer block w-full rounded-xl border bg-white px-4 pb-2.5 pt-6 text-[0.9375rem] text-espresso outline-none transition-colors duration-300 focus:border-gold-deep ${
     error ? 'border-red-700/60' : 'border-gold/50 hover:border-gold'
   }`;
   const common = {
@@ -50,9 +50,9 @@ export default function FloatingField({
 
         <label
           htmlFor={id}
-          className={`pointer-events-none absolute left-4 origin-left text-taupe transition-all duration-200 peer-focus:top-2 peer-focus:text-[0.6875rem] peer-focus:tracking-[0.15em] peer-focus:text-gold-deep peer-focus:uppercase peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-[0.6875rem] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.15em] ${
+          className={`pointer-events-none absolute left-4 origin-left text-taupe transition-all duration-200 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gold-deep peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs ${
             as === 'select' && filled
-              ? 'top-2 text-[0.6875rem] uppercase tracking-[0.15em]'
+              ? 'top-2 text-xs'
               : 'top-4 text-[0.9375rem]'
           }`}
         >

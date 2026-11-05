@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 
 const base =
-  'inline-flex items-center justify-center gap-3 font-sans font-medium uppercase tracking-[0.2em] transition-all duration-300';
+  'inline-flex items-center justify-center gap-2.5 rounded-full font-sans font-medium tracking-[0.01em] transition-all duration-300';
 
 const sizes = {
-  sm: 'px-5 py-2.5 text-[0.7rem]',
-  body: 'px-6 py-3 text-[0.8125rem]', // matches 13px body copy (hero)
-  md: 'px-7 py-3.5 text-xs',
-  lg: 'px-9 py-4 text-[0.8125rem]',
+  sm: 'px-5 py-2.5 text-[0.8125rem]',
+  body: 'px-6 py-3 text-sm',
+  md: 'px-7 py-3.5 text-sm',
+  lg: 'px-8 py-4 text-[0.9375rem]',
 };
 
 const variants = {
   solid: 'sheen bg-gold-gradient text-espresso hover:bg-gold-gradient-deep',
-  ghost: 'border border-gold bg-transparent text-gold-deep hover:bg-champagne',
+  ghost: 'border border-espresso/15 bg-transparent text-espresso hover:border-gold hover:bg-champagne',
+  dark: 'bg-espresso text-white hover:bg-black',
   'ghost-white': 'border border-white/80 bg-transparent text-white hover:bg-white hover:text-espresso',
   white: 'bg-white text-gold-deep hover:bg-champagne',
 };

@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 /*
- * Cookie consent for third-party embeds (Google Maps, Facebook videos).
+ * Cookie consent for third-party embeds (Google Maps; FacebookVideo if it is used again).
  * The site itself sets no tracking cookies; these embeds may set their own.
  *   consent: null (not chosen yet) | 'all' | 'essential'
  */

@@ -1,26 +1,26 @@
 import Seo from '../components/ui/Seo';
-import Testimonials from '../components/home/Testimonials';
 import Hero from '../components/home/Hero';
-import CtaBand from '../components/home/CtaBand';
-import Intro from '../components/home/Intro';
-import RecentWork from '../components/home/RecentWork';
-import FeaturedSpaces from '../components/home/FeaturedSpaces';
+import ServicesIntro from '../components/home/ServicesIntro';
 import WhyChooseUs from '../components/home/WhyChooseUs';
-import Process from '../components/home/Process';
+import RecentWork from '../components/home/RecentWork';
+import ProcessSplit from '../components/home/ProcessSplit';
+import Testimonials from '../components/home/Testimonials';
+import ModernApproach from '../components/home/ModernApproach';
+import CtaBand from '../components/home/CtaBand';
 
-/** Home — sections in order with the white / champagne rhythm from architecture §6. */
+/** Home — dark theme; sections alternate ink / ink-soft. */
 export default function Home() {
   return (
     <>
-      <Seo description="Platinum Interior Design — bespoke interiors for homes and businesses in Harare, Zimbabwe." />
+      <Seo description="Platinum Interior Design transforms houses into elegant, modern and comfortable homes in Harare, Zimbabwe: wainscoting, TV wall units, fitted kitchens, home cinemas, ceilings and more." />
       <Hero />
-      <Intro />
-      <FeaturedSpaces />
-      <RecentWork />
+      <ServicesIntro />
       <WhyChooseUs />
-      <Process bg="bg-white" />
-      <Testimonials />
+      <RecentWork />
+      <ProcessSplit />
+      <ModernApproach />
       <CtaBand />
+      <Testimonials />
     </>
   );
 }

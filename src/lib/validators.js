@@ -1,6 +1,9 @@
+import services from '../content/services.json';
+
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const PROJECT_TYPES = ['Residential', 'Commercial', 'Hospitality', 'Renovation', 'Other'];
+/** Enquiry form "What are you interested in?" options — one per service, plus Other. */
+export const PROJECT_TYPES = [...services.map((s) => s.title), 'Other'];
 
 /** Client-side checks mirroring the server rules in /api/enquiry.php (architecture §8.3). */
 export function validateEnquiry(v) {

@@ -10,20 +10,6 @@ import work from '../content/work.json';
 import site from '../content/site.json';
 
 const imageFor = (name) => work.find((w) => w.image === name);
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
-
-/** Small L-shaped gold marks on each corner of the parent (parent must be relative). */
-function GoldCorners({ size = 'h-4 w-4' }) {
-  const base = `absolute ${size} border-gold`;
-  return (
-    <span aria-hidden>
-      <span className={`${base} -left-1.5 -top-1.5 border-l border-t`} />
-      <span className={`${base} -right-1.5 -top-1.5 border-r border-t`} />
-      <span className={`${base} -bottom-1.5 -left-1.5 border-b border-l`} />
-      <span className={`${base} -bottom-1.5 -right-1.5 border-b border-r`} />
-    </span>
-  );
-}
 
 /** About page (architecture §7.4). */
 export default function About() {
@@ -36,15 +22,19 @@ export default function About() {
         title="About Us"
         description="The story, philosophy and values behind Platinum Interior Design, interior designers in Harare, Zimbabwe."
       />
-      <PageHero title="About Us" eyebrow="Our Studio" />
+      <PageHero
+        title="About Us"
+        eyebrow="Our Studio"
+        image="hallway-gallery"
+        intro="The people, ideas and craft behind every Platinum interior."
+      />
 
       {/* ── Story ─────────────────────────────────────────── */}
       <section className="section bg-white">
         <div className="container-content grid items-center gap-16 md:grid-cols-12 md:gap-12">
-          <div className="max-w-prose md:col-span-6">
+          <div className="reveal-left max-w-prose md:col-span-6">
             <Eyebrow>{story.eyebrow}</Eyebrow>
-            <h2 className="h2 mt-4">{story.title}</h2>
-            <span aria-hidden className="mt-6 block h-px w-16 bg-gold" />
+            <h2 className="h2 mt-5">{story.title}</h2>
             {story.paragraphs.map((p, i) => (
               <p key={i} className={i === 0 ? 'mt-8' : 'mt-5'}>
                 {p}
@@ -53,22 +43,21 @@ export default function About() {
           </div>
 
           {/* Overlapping image pair */}
-          <div className="relative mb-10 md:col-span-6 md:mb-0 md:pl-8">
+          <div className="reveal-right relative mb-10 md:col-span-6 md:mb-0 md:pl-8">
             <div className="relative ml-auto w-[78%]">
-              <span aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 border border-gold" />
               {mainImg && (
                 <ResponsiveImage
                   name={mainImg.image}
                   alt={mainImg.alt}
                   sizes="(min-width: 768px) 38vw, 78vw"
-                  className="relative block bg-champagne"
+                  className="relative block overflow-hidden rounded-3xl bg-champagne shadow-soft"
                   imgClassName="aspect-[3/4] w-full object-cover"
                   style={{ objectPosition: mainImg.focus }}
                 />
               )}
             </div>
             {accentImg && (
-              <div className="absolute -bottom-10 left-0 w-[45%] border-[6px] border-white shadow-soft md:left-0">
+              <div className="absolute -bottom-10 left-0 w-[45%] overflow-hidden rounded-2xl border-[6px] border-white shadow-soft md:left-0">
                 <ResponsiveImage
                   name={accentImg.image}
                   alt={accentImg.alt}
@@ -106,16 +95,16 @@ export default function About() {
       {/* ── Philosophy ────────────────────────────────────── */}
       <section className="section bg-champagne">
         <div className="container-content">
-          <figure className="relative mx-auto max-w-4xl px-6 py-16 text-center md:px-16 md:py-20">
-            <GoldCorners size="h-8 w-8" />
+          <figure className="reveal-scale relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-espresso px-6 py-16 text-center md:px-16 md:py-20">
+            <span aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
             <Eyebrow>{philosophy.eyebrow}</Eyebrow>
-            <span aria-hidden className="mt-6 block font-display text-7xl leading-none text-gold/50">
+            <span aria-hidden className="mt-6 block text-7xl font-semibold leading-none text-gold">
               “
             </span>
-            <blockquote className="-mt-4 font-display text-[clamp(1.5rem,3vw,2.5rem)] italic leading-snug text-espresso">
+            <blockquote className="relative -mt-2 text-[clamp(1.5rem,3vw,2.5rem)] font-light leading-snug tracking-tight text-white">
               {philosophy.quote}
             </blockquote>
-            <figcaption className="caption mt-8 text-gold-deep">— {philosophy.attribution}</figcaption>
+            <figcaption className="mt-8 text-sm font-medium text-gold-light">— {philosophy.attribution}</figcaption>
           </figure>
         </div>
       </section>
@@ -123,16 +112,16 @@ export default function About() {
       {/* ── Values ────────────────────────────────────────── */}
       <section className="section bg-white">
         <div className="container-content">
-          <SectionHeading eyebrow={values.eyebrow} title={values.title} divider />
-          <ul className="mt-16 grid gap-px bg-gold/25 sm:grid-cols-2 lg:grid-cols-4">
+          <SectionHeading eyebrow={values.eyebrow} title={values.title} divider className="reveal" />
+          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {values.items.map((v, i) => (
-              <li key={v.title} className="group bg-white px-8 py-12 text-center">
-                <span className="block font-display text-5xl text-gold transition-transform duration-500 group-hover:-translate-y-1">
-                  {ROMAN[i]}
+              <li key={v.title} style={{ '--d': i }} className="reveal group rounded-[2rem] bg-champagne p-8 transition-colors duration-500 hover:bg-espresso">
+                <span className="block text-5xl font-light tracking-tight text-gold">
+                  {String(i + 1).padStart(2, '0')}
                 </span>
-                <span aria-hidden className="mx-auto mt-5 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" />
-                <h3 className="mt-6 text-xl text-espresso">{v.title}</h3>
-                <p className="mx-auto mt-4 max-w-[16rem] text-[0.9375rem] text-espresso/85">{v.text}</p>
+                
+                <h3 className="mt-10 text-xl text-espresso transition-colors duration-500 group-hover:text-white">{v.title}</h3>
+                <p className="mt-3 text-[0.875rem] leading-relaxed text-espresso/70 transition-colors duration-500 group-hover:text-white/70">{v.text}</p>
               </li>
             ))}
           </ul>
@@ -148,12 +137,11 @@ export default function About() {
               {team.map((m) => (
                 <li key={m.name} className="text-center">
                   <div className="relative mx-auto max-w-xs">
-                    <span aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 border border-gold" />
                     <img
                       src={m.photo}
                       alt={`Portrait of ${m.name}`}
                       loading="lazy"
-                      className="relative aspect-[4/5] w-full bg-sand object-cover"
+                      className="relative aspect-[4/5] w-full rounded-3xl bg-sand object-cover shadow-soft"
                     />
                   </div>
                   <h3 className="mt-8 text-xl">{m.name}</h3>

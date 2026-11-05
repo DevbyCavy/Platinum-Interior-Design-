@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Logo from '../ui/Logo';
 import SocialIcons from '../ui/SocialIcons';
-import BookNowButton from '../ui/BookNowButton';
 import MobileMenu from './MobileMenu';
 import { NAV_LINKS } from '../../lib/nav';
 import { useScrolled } from '../../lib/useScrolled';
@@ -16,23 +15,19 @@ export default function Header() {
   // Close the mobile menu whenever the route changes.
   useEffect(() => setMenuOpen(false), [pathname]);
 
-  // Home: full-width and transparent over the hero until the visitor scrolls 80px.
-  // Otherwise (scrolled, sub-pages, menu open): a floating white pill bar.
-  const floating = !(isHome && !scrolled) || menuOpen;
-
-  const bar = floating
-    ? 'mt-2 h-16 max-w-[1180px] rounded-full border-hairline bg-white/95 pl-5 pr-3 shadow-[0_10px_30px_rgba(43,37,32,0.10)] backdrop-blur-md sm:mt-3 sm:px-5 md:mt-4 md:px-8'
-    : 'mt-0 h-20 max-w-content border-transparent bg-transparent px-4 sm:px-6 md:px-10 lg:h-24';
-  const linkColor = 'text-espresso';
+  // Full-width dark bar: transparent over the home hero, solid dark once scrolled and on every other page.
+  const solid = !(isHome && !scrolled) || menuOpen;
+  const headerBg = solid
+    ? 'border-white/10 bg-ink/90 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-md'
+    : 'border-transparent bg-transparent';
+  const linkColor = 'text-white/80 hover:text-white';
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 px-2 sm:px-3 md:px-6">
-        <div
-          className={`mx-auto flex w-full items-center justify-between gap-3 border transition-all duration-500 ease-out sm:gap-6 ${bar}`}
-        >
+      <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-out ${headerBg}`}>
+        <div className="container-content flex h-[4.5rem] items-center justify-between gap-3 sm:gap-6 lg:h-20">
           <Logo
-            className={`shrink-0 origin-left transition-transform duration-500 ${floating ? 'scale-[0.85]' : 'scale-100'}`}
+            className="shrink-0 origin-left scale-[0.85]"
           />
 
           {/* Desktop navigation */}
@@ -43,7 +38,7 @@ export default function Header() {
                   <NavLink
                     to={to}
                     end={to === '/'}
-                    className={`group relative label text-[0.6875rem] ${linkColor} transition-colors duration-500`}
+                    className={`group relative text-[0.9375rem] font-medium ${linkColor} transition-colors duration-500`}
                   >
                     {({ isActive }) => (
                       <>
@@ -61,27 +56,13 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Desktop right: socials + Book Us Now */}
-          <div className="hidden items-center gap-6 lg:flex">
-            <SocialIcons
-              only={['instagram', 'facebook', 'whatsappChannel']}
-              tone="gold"
-              size="text-sm"
-            />
-            <BookNowButton
-              size="sm"
-              placement="header"
-              className={`transition-[border-radius] duration-500 ${floating ? 'rounded-full' : 'rounded-none'}`}
-            />
+          {/* Desktop right: socials (booking lives in the floating button) */}
+          <div className="hidden items-center lg:flex">
+            <SocialIcons only={['instagram', 'facebook', 'whatsappChannel']} tone="gold" size="text-base" />
           </div>
 
-          {/* Mobile right: WhatsApp icon + hamburger */}
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3 lg:hidden">
-            <BookNowButton
-              variant="icon"
-              placement="header-mobile"
-              className={floating ? 'rounded-full' : 'rounded-none'}
-            />
+          {/* Mobile right: hamburger */}
+          <div className="flex shrink-0 items-center lg:hidden">
             <button
               type="button"
               onClick={() => setMenuOpen((o) => !o)}

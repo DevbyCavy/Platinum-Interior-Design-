@@ -59,9 +59,9 @@ export default function EnquiryForm() {
 
   if (status === 'done') {
     return (
-      <div role="status" className="border border-gold bg-champagne px-8 py-14 text-center">
+      <div role="status" className="rounded-3xl border border-hairline bg-champagne px-8 py-14 text-center">
         <p className="eyebrow">Message sent</p>
-        <p className="mt-4 font-display text-3xl uppercase tracking-luxe">Thank you</p>
+        <p className="mt-4 font-display text-3xl font-semibold tracking-tight">Thank you</p>
         <span aria-hidden className="mx-auto mt-5 block h-px w-12 bg-gold" />
         <p className="mx-auto mt-6 max-w-sm">We’ll be in touch soon. Can’t wait? Continue the conversation on WhatsApp.</p>
         <BookNowButton label="Continue on WhatsApp" placement="enquiry-success" className="mt-8" />
@@ -75,7 +75,7 @@ export default function EnquiryForm() {
         <FloatingField id="name" label="Your name" autoComplete="name" value={values.name} onChange={set('name')} error={errors.name} required />
         <FloatingField id="email" label="Email address" type="email" autoComplete="email" value={values.email} onChange={set('email')} error={errors.email} required />
         <FloatingField id="phone" label="Phone" type="tel" autoComplete="tel" optional value={values.phone} onChange={set('phone')} error={errors.phone} />
-        <FloatingField id="project_type" label="Project type" as="select" optional options={PROJECT_TYPES} value={values.project_type} onChange={set('project_type')} error={errors.project_type} />
+        <FloatingField id="project_type" label="What are you interested in?" as="select" optional options={PROJECT_TYPES} value={values.project_type} onChange={set('project_type')} error={errors.project_type} />
       </div>
       <FloatingField id="message" label="Tell us about your project" as="textarea" value={values.message} onChange={set('message')} error={errors.message} required />
 
@@ -114,7 +114,7 @@ export default function EnquiryForm() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="sheen inline-flex items-center justify-center gap-3 bg-gold-gradient px-8 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-espresso transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-gradient-deep hover:shadow-[0_12px_28px_-6px_rgba(160,120,64,0.45)] disabled:cursor-wait disabled:opacity-60"
+          className="sheen inline-flex items-center justify-center gap-3 rounded-full bg-gold-gradient px-8 py-3.5 text-sm font-medium text-espresso transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-gradient-deep hover:shadow-[0_12px_28px_-6px_rgba(160,120,64,0.45)] disabled:cursor-wait disabled:opacity-60"
         >
           {status === 'sending' ? 'Sending…' : 'Send enquiry'}
         </button>

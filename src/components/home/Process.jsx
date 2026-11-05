@@ -1,33 +1,39 @@
-import SectionHeading from '../ui/SectionHeading';
 import steps from '../../content/process.json';
 
 /**
- * Our Process — 5-step timeline joined by a thin gold line (architecture §6.6).
- * Horizontal on desktop, vertical on mobile.
+ * Our Process — five step cards with large light numerals and a progress bar that fills on hover.
+ * Horizontal on desktop, stacked on mobile.
  */
 export default function Process({ bg = 'bg-white' }) {
+  const card = bg === 'bg-white' ? 'bg-champagne' : 'bg-white';
   return (
     <section className={`section ${bg}`}>
       <div className="container-content">
-        <SectionHeading eyebrow="How We Work" title="Our Process" divider />
+        <div className="reveal grid items-end gap-6 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow">How we work</p>
+            <h2 className="h2 mt-5 text-espresso">
+              Our <span className="font-light text-gold-deep">process</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-[0.9375rem] leading-relaxed text-espresso/75 lg:col-span-5 lg:justify-self-end">
+            Five clear steps from first conversation to the final reveal.
+          </p>
+        </div>
 
-        <ol className="relative mt-16 grid gap-12 lg:mt-20 lg:grid-cols-5 lg:gap-8">
-          {/* Connecting gold line: vertical on mobile, horizontal on desktop */}
-          <span aria-hidden className="absolute bottom-6 left-[1.6rem] top-6 w-px bg-gold/50 lg:hidden" />
-          <span aria-hidden className="absolute left-[10%] right-[10%] top-8 hidden h-px bg-gold/50 lg:block" />
-
+        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((step, i) => (
-            <li key={step.title} className="relative flex gap-6 lg:flex-col lg:items-center lg:gap-0 lg:text-center">
-              {/* Numeral sits on the section colour so the gold line appears to pass behind it */}
-              <span
-                className={`relative z-10 flex h-16 w-14 shrink-0 items-center justify-center font-display text-4xl text-gold lg:w-20 ${bg}`}
-              >
-                {String(i + 1).padStart(2, '0')}
+            <li key={step.title} className={`reveal group flex flex-col rounded-[2rem] p-7 ${card}`} style={{ '--d': i }}>
+              <span className="text-5xl font-light tracking-tight text-gold">{String(i + 1).padStart(2, '0')}</span>
+              {/* Progress bar: fills up to this step on hover */}
+              <span aria-hidden className="mt-6 block h-1 overflow-hidden rounded-full bg-espresso/10">
+                <span
+                  className="block h-full origin-left rounded-full bg-gold-gradient transition-transform duration-700 ease-out [transform:scaleX(var(--p))] group-hover:[transform:scaleX(1)]"
+                  style={{ '--p': (i + 1) / steps.length }}
+                />
               </span>
-              <div className="pt-2 lg:pt-6">
-                <h3 className="text-lg text-espresso">{step.title}</h3>
-                <p className="mt-3 text-[0.9375rem] text-espresso/85 lg:mx-auto lg:max-w-[14rem]">{step.text}</p>
-              </div>
+              <h3 className="mt-6 text-lg text-espresso">{step.title}</h3>
+              <p className="mt-2 text-[0.875rem] leading-relaxed text-espresso/70">{step.text}</p>
             </li>
           ))}
         </ol>

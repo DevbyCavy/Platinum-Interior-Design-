@@ -14,11 +14,16 @@ import { useConsent } from '../lib/consent';
 export function Portfolio() {
   return (
     <>
-      <Seo title="Portfolio" description="Residential, commercial and hospitality interiors by Platinum Interior Design." />
-      <PageHero title="Portfolio" eyebrow="Our Work" crumbs={[]} />
+      <Seo title="Portfolio" description="TV wall units, wainscoting, fitted kitchens, ceilings and complete home interiors by Platinum Interior Design, Harare." />
+      <PageHero
+        title="Portfolio"
+        eyebrow="Our Work"
+        image="living-tv-unit-shelving"
+        intro="A selection of homes and spaces we have designed, built and styled."
+      />
       <section className="section">
         <div className="container-content">
-          <SectionHeading title="All Projects" divider />
+          <SectionHeading title="All Projects" divider className="reveal" />
           <div className="mt-16">
             <ProjectGrid placement="portfolio" />
           </div>
@@ -78,9 +83,8 @@ export function Privacy() {
           </p>
           <h2 className="pt-6 text-2xl">Cookies & third-party content</h2>
           <p>
-            Our website does not use advertising or tracking cookies. Some pages include content from other services:
-            Google Maps on the Contact page and Facebook videos on the Home page. These services may set their own
-            cookies when they load.
+            Our website does not use advertising or tracking cookies. The Contact page includes a map from Google
+            Maps, which may set its own cookies when it loads.
           </p>
           <p>
             When you first visit, we ask whether to load this content automatically (“Accept all”) or only when you
@@ -99,11 +103,14 @@ export function NotFound() {
   return (
     <>
       <Seo title="Page not found" />
-      <section className="flex min-h-[80vh] items-center bg-sand pt-24">
+      <section className="flex min-h-[80vh] items-center bg-champagne pt-24">
         <div className="container-content flex flex-col items-center text-center">
           <p className="eyebrow">404</p>
           <h1 className="h1 mt-4 text-gold-deep">This room is still being designed.</h1>
-          <Link to="/" className="label mt-10 text-gold-deep underline underline-offset-8">
+          <Link
+            to="/"
+            className="label mt-10 rounded-full border border-gold px-7 py-3 text-[0.6875rem] text-gold-deep transition-colors hover:bg-gold hover:text-white"
+          >
             Back to home →
           </Link>
         </div>
