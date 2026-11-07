@@ -27,7 +27,7 @@ export default function Services() {
       <PageHero
         title="Services"
         eyebrow="What We Do"
-        image="kitchen-white-galley"
+        image="wardrobe-glass-door"
         intro="We specialise in transforming houses into elegant, modern and comfortable homes, from a single feature wall to a complete makeover."
       />
 

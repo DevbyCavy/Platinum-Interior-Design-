@@ -50,5 +50,430 @@
       960,
       1156
     ]
+  },
+  "bedroom-carved-tufted-bed": {
+    "width": 736,
+    "height": 736,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "bedroom-kids-arched-headboard": {
+    "width": 1080,
+    "height": 1267,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "bedroom-panelled-headboard-wall": {
+    "width": 1076,
+    "height": 1026,
+    "widths": [
+      480,
+      960,
+      1076
+    ]
+  },
+  "bedroom-pillow-top-mattress": {
+    "width": 715,
+    "height": 577,
+    "widths": [
+      480,
+      715
+    ]
+  },
+  "bedroom-storage-base-bed": {
+    "width": 1280,
+    "height": 1190,
+    "widths": [
+      480,
+      960,
+      1280
+    ]
+  },
+  "ceiling-coffered": {
+    "width": 1080,
+    "height": 751,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "ceiling-curved-chandelier": {
+    "width": 768,
+    "height": 1024,
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "ceiling-floating-bulkhead": {
+    "width": 1080,
+    "height": 942,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "ceiling-layered-bulkhead": {
+    "width": 1080,
+    "height": 583,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "ceiling-stepped-coffered": {
+    "width": 1080,
+    "height": 1120,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "commercial-forecourt-ceiling": {
+    "width": 810,
+    "height": 1080,
+    "widths": [
+      480,
+      810
+    ]
+  },
+  "commercial-service-station": {
+    "width": 810,
+    "height": 1080,
+    "widths": [
+      480,
+      810
+    ]
+  },
+  "entry-arched-mirror-console": {
+    "width": 1080,
+    "height": 1279,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "entry-floating-console-mirror": {
+    "width": 640,
+    "height": 839,
+    "widths": [
+      480,
+      640
+    ]
+  },
+  "entry-gold-arched-mirror": {
+    "width": 1006,
+    "height": 1280,
+    "widths": [
+      480,
+      960,
+      1006
+    ]
+  },
+  "entry-slat-mirror-cabinet": {
+    "width": 736,
+    "height": 1104,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "entry-slat-mirror-shelf": {
+    "width": 1086,
+    "height": 1279,
+    "widths": [
+      480,
+      960,
+      1086
+    ]
+  },
+  "entry-slat-panel-mirror": {
+    "width": 794,
+    "height": 1281,
+    "widths": [
+      480,
+      794
+    ]
+  },
+  "exterior-house-painting": {
+    "width": 810,
+    "height": 1080,
+    "widths": [
+      480,
+      810
+    ]
+  },
+  "exterior-portico-painting": {
+    "width": 810,
+    "height": 1080,
+    "widths": [
+      480,
+      810
+    ]
+  },
+  "kitchen-glass-display-unit": {
+    "width": 2560,
+    "height": 2011,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
+  },
+  "living-backlit-stone-tv-wall": {
+    "width": 1080,
+    "height": 1243,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "living-floating-tv-console": {
+    "width": 1280,
+    "height": 1169,
+    "widths": [
+      480,
+      960,
+      1280
+    ]
+  },
+  "living-home-cinema": {
+    "width": 1080,
+    "height": 1061,
+    "widths": [
+      480,
+      960,
+      1080
+    ]
+  },
+  "living-leather-corner-sofa": {
+    "width": 736,
+    "height": 920,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "living-leather-lounge": {
+    "width": 736,
+    "height": 1107,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "living-leather-suite": {
+    "width": 2560,
+    "height": 1920,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
+  },
+  "living-recliner-lounge": {
+    "width": 720,
+    "height": 790,
+    "widths": [
+      480,
+      720
+    ]
+  },
+  "living-stone-feature-tv-wall": {
+    "width": 1059,
+    "height": 1143,
+    "widths": [
+      480,
+      960,
+      1059
+    ]
+  },
+  "living-white-tv-lounge": {
+    "width": 1280,
+    "height": 720,
+    "widths": [
+      480,
+      960,
+      1280
+    ]
+  },
+  "mirror-four-panel": {
+    "width": 736,
+    "height": 981,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "mirror-grid-console": {
+    "width": 736,
+    "height": 851,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "mirror-grid-dining": {
+    "width": 400,
+    "height": 516,
+    "widths": [
+      400
+    ]
+  },
+  "mirror-tall-hallway": {
+    "width": 736,
+    "height": 1308,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "mirror-window-pane-entry": {
+    "width": 736,
+    "height": 977,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "mirror-window-pane-lounge": {
+    "width": 735,
+    "height": 980,
+    "widths": [
+      480,
+      735
+    ]
+  },
+  "panelling-classic-white": {
+    "width": 736,
+    "height": 736,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "panelling-gallery-hallway": {
+    "width": 960,
+    "height": 1271,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "panelling-grey-wall": {
+    "width": 735,
+    "height": 931,
+    "widths": [
+      480,
+      735
+    ]
+  },
+  "panelling-lit-hallway": {
+    "width": 736,
+    "height": 981,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "panelling-long-corridor": {
+    "width": 1280,
+    "height": 960,
+    "widths": [
+      480,
+      960,
+      1280
+    ]
+  },
+  "panelling-round-mirror-wall": {
+    "width": 878,
+    "height": 1279,
+    "widths": [
+      480,
+      878
+    ]
+  },
+  "panelling-sconce-wall": {
+    "width": 736,
+    "height": 981,
+    "widths": [
+      480,
+      736
+    ]
+  },
+  "panelling-white-room": {
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "panelling-white-wall": {
+    "width": 680,
+    "height": 540,
+    "widths": [
+      480,
+      680
+    ]
+  },
+  "wardrobe-backlit-walk-in": {
+    "width": 2560,
+    "height": 2011,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
+  },
+  "wardrobe-glass-door": {
+    "width": 2560,
+    "height": 2011,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
+  },
+  "wardrobe-oak-walk-in": {
+    "width": 2560,
+    "height": 2011,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
+  },
+  "wardrobe-open-oak": {
+    "width": 2560,
+    "height": 2011,
+    "widths": [
+      480,
+      960,
+      1600,
+      2400,
+      2560
+    ]
   }
 }

@@ -27,6 +27,14 @@ export function Portfolio() {
           <div className="mt-16">
             <ProjectGrid placement="portfolio" />
           </div>
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/catalogue"
+              className="rounded-full border border-espresso/15 px-7 py-3.5 text-sm font-medium text-espresso transition-colors hover:border-gold hover:bg-champagne"
+            >
+              Browse the full catalogue →
+            </Link>
+          </div>
         </div>
       </section>
       <CtaBand />

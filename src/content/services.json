@@ -17,7 +17,7 @@
     "slug": "fitted-kitchens-bedroom-cabinets",
     "title": "Fitted Kitchens & Bedroom Cabinets",
     "icon": "CookingPot",
-    "image": "kitchen-white-galley",
+    "image": "wardrobe-oak-walk-in",
     "summary": "Kitchens and built-in cabinets made to fit your space and the way you use it, with smart storage, quality finishes and a clean, modern look.",
     "included": [
       "Fitted kitchen units",
@@ -31,7 +31,7 @@
     "slug": "headboards-base-beds",
     "title": "Headboards & Base Beds",
     "icon": "BedDouble",
-    "image": null,
+    "image": "bedroom-panelled-headboard-wall",
     "summary": "Custom headboards and base beds that make the bed the centrepiece of the room, in the size, shape, fabric and finish you choose.",
     "included": [
       "Custom upholstered headboards",
@@ -45,7 +45,7 @@
     "slug": "dining-bedroom-suites",
     "title": "Dining & Bedroom Suites",
     "icon": "UtensilsCrossed",
-    "image": null,
+    "image": "bedroom-carved-tufted-bed",
     "summary": "Complete, coordinated dining and bedroom suites, chosen and finished to suit your home, so every piece works together beautifully.",
     "included": [
       "Dining tables and chairs",
@@ -59,7 +59,7 @@
     "slug": "home-cinemas-movie-rooms",
     "title": "Home Cinemas & Movie Rooms",
     "icon": "Clapperboard",
-    "image": "living-tv-unit-shelving",
+    "image": "living-home-cinema",
     "summary": "Dedicated movie rooms and cinema-style lounges designed for comfort and atmosphere, with feature walls, mood lighting and seating built for movie nights.",
     "included": [
       "Cinema room design",
@@ -73,7 +73,7 @@
     "slug": "mirrors-skirting-painting",
     "title": "Mirrors, Skirting & Painting",
     "icon": "PaintRoller",
-    "image": "hallway-gallery",
+    "image": "entry-gold-arched-mirror",
     "summary": "The finishing touches that make a home feel complete: statement mirrors, neat skirting and flawless paintwork.",
     "included": [
       "Decorative and wall mirrors",
@@ -87,7 +87,7 @@
     "slug": "ceiling-designs",
     "title": "Ceiling Designs & Much More",
     "icon": "LampCeiling",
-    "image": "living-white-panelled",
+    "image": "ceiling-curved-chandelier",
     "summary": "Elegant ceilings that lift the whole room, from cove lighting and bulkheads to decorative cornices. And if you have something else in mind, just ask.",
     "included": [
       "Bulkheads and drop ceilings",

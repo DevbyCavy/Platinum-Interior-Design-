@@ -17,11 +17,11 @@ const LAYOUT = [
 ];
 const ORDER = [
   'living-tv-wall-led',
-  'living-white-panelled',
-  'kitchen-mirrored-wall-unit',
-  'hallway-gallery',
-  'kitchen-white-galley',
-  'living-tv-unit-shelving',
+  'living-backlit-stone-tv-wall',
+  'entry-gold-arched-mirror',
+  'panelling-lit-hallway',
+  'bedroom-panelled-headboard-wall',
+  'wardrobe-oak-walk-in',
 ];
 
 export default function ProjectGrid({ placement = 'project-grid' }) {

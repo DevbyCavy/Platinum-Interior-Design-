@@ -13,7 +13,8 @@ const MANIFEST = path.join(ROOT, 'src', 'content', 'image-manifest.json');
 const TARGET_WIDTHS = [480, 960, 1600, 2400];
 
 await mkdir(OUT, { recursive: true });
-const files = (await readdir(SRC)).filter((f) => /\.(png|jpe?g|webp|tiff?)$/i.test(f));
+// Files starting with "_" are skipped (duplicates / originals kept for reference).
+const files = (await readdir(SRC)).filter((f) => !f.startsWith('_') && /\.(png|jpe?g|webp|tiff?)$/i.test(f));
 // Merge with the existing manifest so images whose originals are no longer in /raw-images
 // (already generated) keep working.
 let manifest = {};

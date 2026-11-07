@@ -7,6 +7,7 @@ import Home from './pages/Home';
 const sub = (name) => lazy(() => import('./pages/SubPages').then((m) => ({ default: m[name] })));
 const Portfolio = sub('Portfolio');
 const ProjectDetail = sub('ProjectDetail');
+const Catalogue = lazy(() => import('./pages/Catalogue'));
 const Services = lazy(() => import('./pages/Services'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -20,6 +21,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="portfolio/:slug" element={<ProjectDetail />} />
+        <Route path="catalogue" element={<Catalogue />} />
         <Route path="services" element={<Services />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

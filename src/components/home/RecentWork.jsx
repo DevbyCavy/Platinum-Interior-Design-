@@ -6,7 +6,17 @@ import work from '../../content/work.json';
  * Home (dark) — "Explore our designs": staggered masonry gallery (mixed photo heights) with captions on hover.
  * Aspect ratios are paired per column (3 columns × 2 photos) so each column ends at the same height.
  */
-const ASPECTS = ['aspect-[4/5]', 'aspect-[4/3]', 'aspect-[3/2]', 'aspect-[3/4]', 'aspect-[16/10]', 'aspect-[8/11]'];
+// Curated mix across categories; the full set lives on /catalogue.
+const PICKS = [
+  'living-backlit-stone-tv-wall',
+  'bedroom-kids-arched-headboard',
+  'panelling-gallery-hallway',
+  'wardrobe-backlit-walk-in',
+  'entry-arched-mirror-console',
+  'ceiling-stepped-coffered',
+];
+const items = PICKS.map((name) => work.find((w) => w.image === name)).filter(Boolean);
+const ASPECTS =['aspect-[4/5]', 'aspect-[4/3]', 'aspect-[3/2]', 'aspect-[3/4]', 'aspect-[16/10]', 'aspect-[8/11]'];
 export default function RecentWork() {
   return (
     <section className="section-dark">
@@ -19,7 +29,7 @@ export default function RecentWork() {
         </div>
 
         <ul className="mt-14 gap-4 sm:columns-2 lg:columns-3">
-          {work.slice(0, 6).map((item, i) => (
+          {items.map((item, i) => (
             <li key={item.image} className="reveal mb-4 break-inside-avoid" style={{ '--d': i % 3 }}>
               <figure
                 className={`group relative overflow-hidden rounded-[1.5rem] bg-ink-card ${ASPECTS[i % ASPECTS.length]}`}
@@ -43,8 +53,8 @@ export default function RecentWork() {
         </ul>
 
         <div className="mt-12 flex justify-center">
-          <Button to="/portfolio" variant="ghost-white">
-            View full portfolio
+          <Button to="/catalogue" variant="ghost-white">
+            Browse the full catalogue
           </Button>
         </div>
       </div>
