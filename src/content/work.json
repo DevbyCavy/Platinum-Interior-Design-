@@ -299,8 +299,7 @@
     "title": "Backlit Walk-In Wardrobe",
     "category": "Wardrobes & Kitchens",
     "alt": "Walk-in wardrobe with oak units, warm LED strip lighting and white drawers",
-    "focus": "50% 50%",
-    "hero": true
+    "focus": "50% 50%"
   },
   {
     "image": "wardrobe-oak-walk-in",
@@ -356,7 +355,7 @@
     "category": "Living Rooms",
     "alt": "Open lounge with tan leather sofas and armchairs on a zebra-print rug and a feature wall",
     "focus": "50% 50%",
-    "hero": false
+    "hero": true
   },
   {
     "image": "bedroom-carved-tufted-bed",
