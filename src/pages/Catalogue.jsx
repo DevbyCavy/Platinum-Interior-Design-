@@ -53,14 +53,14 @@ export default function Catalogue() {
       <PageHero
         title="Catalogue"
         eyebrow="Ideas & Inspiration"
-        image="living-leather-suite"
+        image="living-floating-tv-console"
         intro="Browse our work by room and style. Tap any photo to view it larger, then book us on WhatsApp to create something similar for your home."
       />
 
-      <section className="bg-white pb-20 pt-10 md:pb-28">
+      <section className="bg-ink pb-20 pt-10 md:pb-28">
         <div className="container-content">
           {/* Category filter */}
-          <nav aria-label="Catalogue categories" className="sticky top-20 z-20 -mx-6 bg-white/90 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
+          <nav aria-label="Catalogue categories" className="sticky top-20 z-20 -mx-6 bg-ink/90 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
             <ul className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
               <FilterPill label="All" count={work.filter((w) => manifest[w.image]).length} active={!active} onClick={() => select(null)} />
               {groups.map((g) => (
@@ -78,12 +78,12 @@ export default function Catalogue() {
           <div className="mt-8 space-y-20">
             {shown.map((g) => (
               <section key={g.slug} aria-labelledby={`cat-${g.slug}`}>
-                <div className="flex flex-wrap items-end justify-between gap-4 border-b border-hairline pb-5">
-                  <h2 id={`cat-${g.slug}`} className="text-[clamp(1.5rem,2.6vw,2.25rem)] text-espresso">
-                    {g.name} <span className="text-base font-light text-taupe">({g.items.length})</span>
+                <div className="flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-5">
+                  <h2 id={`cat-${g.slug}`} className="text-[clamp(1.5rem,2.6vw,2.25rem)] text-white">
+                    {g.name} <span className="text-base font-light text-white/50">({g.items.length})</span>
                   </h2>
                   <BookNowButton
-                    variant="ghost"
+                    variant="ghost-white"
                     size="sm"
                     placement="catalogue-category"
                     context={{ label: 'Category', value: g.name }}
@@ -98,7 +98,7 @@ export default function Catalogue() {
                         <button
                           type="button"
                           onClick={() => setOpen(idx)}
-                          className="group relative block w-full overflow-hidden rounded-[1.5rem] bg-champagne text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                          className="group relative block w-full overflow-hidden rounded-[1.5rem] bg-ink-card text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                           style={{ aspectRatio: `${meta.width} / ${meta.height}` }}
                           aria-label={`View larger: ${item.title}`}
                         >
@@ -142,11 +142,11 @@ function FilterPill({ label, count, active, onClick }) {
         aria-pressed={active}
         className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
           active
-            ? 'border-espresso bg-espresso text-white'
-            : 'border-hairline bg-white text-espresso hover:border-gold hover:text-gold-deep'
+            ? 'border-gold bg-gold text-ink'
+            : 'border-white/15 bg-white/[0.03] text-white/80 hover:border-gold hover:text-gold-light'
         }`}
       >
-        {label} <span className={active ? 'text-gold-light' : 'text-taupe'}>{count}</span>
+        {label} <span className={active ? 'text-ink/60' : 'text-white/40'}>{count}</span>
       </button>
     </li>
   );
