@@ -4,7 +4,6 @@
     "title": "Panelled Media Wall",
     "category": "Living Rooms",
     "alt": "Living room media wall with framed wall panels, vertical LED light strips and a floating grey TV console with warm under-glow lighting on a marble floor",
-    "hero": true,
     "focus": "50% 45%"
   },
   {
@@ -301,7 +300,7 @@
     "category": "Wardrobes & Kitchens",
     "alt": "Walk-in wardrobe with oak units, warm LED strip lighting and white drawers",
     "focus": "50% 50%",
-    "hero": false
+    "hero": true
   },
   {
     "image": "wardrobe-oak-walk-in",
